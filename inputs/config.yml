@@ -1,0 +1,22 @@
+# Daily AI News Digest config
+
+# Story caps
+top_n: 5
+min_strong_stories: 3   # below this, emit a "slow news day" note instead of padding
+
+# Dedupe window (days). A story in the last N digests is skipped.
+dedupe_window_days: 3
+
+# Per-theme weighting (bias which clusters win ties)
+theme_weights:
+  model_release: 1.5
+  regulation: 1.2
+  research: 1.0
+  infra: 1.1
+  funding: 0.7
+  opinion: 0.5
+
+# Time window (hours) considered "today's news"
+lookback_hours: 24
+
+commit_message: "digest: {{date}}"
